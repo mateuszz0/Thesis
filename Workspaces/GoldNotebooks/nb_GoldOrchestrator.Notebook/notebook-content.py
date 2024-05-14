@@ -11,6 +11,7 @@ Watermark = "Timestamp of the recent load to Silver-Confomed"
 import json
 
 # CELL ********************
+# Build DAG to later use in mssparkutils.notebook.runMultiple, which allows for passing parameters to the triggered notebooks: first DDL and then DML
 
 DAG = {
         "activities": [
