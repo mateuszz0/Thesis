@@ -11,7 +11,7 @@ FileFormat = "Format in which a data files are ingested"
 SoftDeletes = "Flag indicating if soft deletes are enabled for a processed table"
 
 # CELL ********************
-
+# Build DAG to later use in mssparkutils.notebook.runMultiple, which allows for passing parameters to the triggered notebook
 DAG = {
     "activities": [
         {
@@ -24,7 +24,7 @@ DAG = {
 }
 
 # CELL ********************
-
+# If soft deletes are enabled, trigger another notebook, which extracts only the keys
 if SoftDeletes != '':
     notebookforkeys= {
         "name": "nb_BronzeLoaderForKeys",
