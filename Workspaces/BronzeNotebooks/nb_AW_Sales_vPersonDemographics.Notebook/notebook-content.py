@@ -27,9 +27,3 @@ schema = StructType([
 # CELL ********************
 
 mssparkutils.notebook.exit(schema.json())
-
-# CELL ********************
-
-df = spark.read.parquet("Files/AW/Sales/1/SalesOrderHeader/2024/04/21/2050/SalesOrderHeader.parquet")
-# df now is a Spark DataFrame containing parquet data from "Files/AW/Sales/1/SalesOrderHeader/2024/04/21/2050/SalesOrderHeader.parquet".
-df.printSchema()
