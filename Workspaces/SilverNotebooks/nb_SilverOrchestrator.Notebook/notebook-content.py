@@ -37,6 +37,8 @@ if Stage == 'Silver Operational':
         il.analyze()
         returnmsg = json.dumps({'RowsInserted': il.rows_inserted, 'RowsUpdated': il.rows_updated, 'Watermark': il.target_watermark.strftime('%Y-%m-%dT%H:%M:%S')})
 elif Stage == 'Silver Conformed':
+    
+    # Build DAG to later use in mssparkutils.notebook.runMultiple, which allows for passing parameters to the triggered notebooks: first DDL and then DML
     DAG = {
         "activities": [
             {
